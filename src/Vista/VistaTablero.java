@@ -8,13 +8,18 @@ import java.awt.Color;
 import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.image.BufferedImage;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
+import javax.imageio.ImageIO;
 import javax.swing.BorderFactory;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JComboBox;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 
@@ -83,7 +88,17 @@ public class VistaTablero extends javax.swing.JFrame {
             }
         }
         this.add(panelTablero);
-    }    
+    }
+    private void cargarIconoPieza(String piezaSeleccionada, int fila, int columna){
+        try{
+           BufferedImage img = ImageIO.read(getClass().getResource("Imagenes" + piezaSeleccionada + ".png"));
+           ImageIcon iconoPieza = new ImageIcon(img);
+           etiquetasTablero[fila][columna].setIcon(iconoPieza);
+           etiquetasTablero[fila][columna].repaint();
+        } catch(IOException e){
+            JOptionPane.showMessageDialog(null,"Error al cargar el icono: " + e.getMessage());
+        }
+    }
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -527,6 +542,7 @@ public class VistaTablero extends javax.swing.JFrame {
         jPanel1.add(jButton64);
 
         jPanel2.setBackground(new java.awt.Color(204, 168, 126));
+        jPanel2.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
 
         jButton65.setText("Iniciar");
         jButton65.addActionListener(new java.awt.event.ActionListener() {
@@ -668,8 +684,9 @@ public class VistaTablero extends javax.swing.JFrame {
                 int columna = Integer.parseInt(inicioColumna.getText());
                 List<String> movimientos;
                 
-                ImageIcon iconoPieza = new ImageIcon("C:\\Users\\danie\\OneDrive\\Documentos\\NetBeansProjects\\JavaGame\\src\\Imagenes\\" + piezaSeleccionada + ".png");
-                
+                //ImageIcon iconoPieza = new ImageIcon("C:\\Users\\danie\\OneDrive\\Documentos\\NetBeansProjects\\JavaGame\\src\\Imagenes\\" + piezaSeleccionada + ".png");
+                //Usando rutas relativas para cargar los iconos
+                ImageIcon iconoPieza = new ImageIcon(getClass().getResource("/Imagenes/" + piezaSeleccionada + ".png"));
                 switch (piezaSeleccionada) {
                     case "Alfil":
                         movimientos = Alfil.calcularMovimientos(fila, columna);
