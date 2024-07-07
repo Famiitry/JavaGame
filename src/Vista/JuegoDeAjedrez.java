@@ -35,4 +35,8 @@ public class JuegoDeAjedrez {
         // Método para verificar si el juego ya ha sido iniciado
         return juegoIniciado;
     }   
+
+    void realizarAccionEnCasilla(int fila, int columna) {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
 }
