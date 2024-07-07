@@ -1062,72 +1062,37 @@ public class VistaTablero extends javax.swing.JFrame {
                         posiblesMovimientos = new PosiblesMovimientos();
                         break;
                 }
-                
                 resaltarPosiblesMovimientos(posiblesMovimientos.getMovimientos(), fila, columna);
             } catch (NumberFormatException ex) {
                 // Manejar la excepción si el texto ingresado no es un número válido
                 System.out.println("Por favor, ingresa números válidos para la fila y columna.");
             }
         }
-    });
-}
 
-private PosiblesMovimientos calcularPosiblesMovimientosAlfil(int fila, int columna) {
-    List<VistaTablero.Movimiento> movimientos = new ArrayList<>();
-    // Agrega lógica para calcular los posibles movimientos del alfil
-    //...
-    return new PosiblesMovimientos(movimientos);
-}
-
-private PosiblesMovimientos calcularPosiblesMovimientosReina(int fila, int columna) {
-    List<VistaTablero.Movimiento> movimientos = new ArrayList<>();
-    // Agrega lógica para calcular los posibles movimientos de la reina
-    //...
-    return new PosiblesMovimientos(movimientos);
-}
-
-private PosiblesMovimientos calcularPosiblesMovimientosTorre(int fila, int columna) {
-    List<VistaTablero.Movimiento> movimientos = new ArrayList<>();
-    // Agrega lógica para calcular los posibles movimientos de la torre
-    //...
-    return new PosiblesMovimientos(movimientos);
-}
-
-private PosiblesMovimientos calcularPosiblesMovimientosCaballo(int fila, int columna) {
-    List<VistaTablero.Movimiento> movimientos = new ArrayList<>();
-    // Agrega lógica para calcular los posibles movimientos del caballo
-    //...
-    return new PosiblesMovimientos(movimientos);
-}
-
-private PosiblesMovimientos calcularPosiblesMovimientosPeon(int fila, int columna) {
-    List<VistaTablero.Movimiento> movimientos = new ArrayList<>();
-    // Agrega lógica para calcular los posibles movimientos del peón
-    //...
-    return new PosiblesMovimientos(movimientos);
-}
-
-private void resaltarPosiblesMovimientos(List<VistaTablero.Movimiento> movimientos, int fila, int columna) {
-    // Limpiar los posibles movimientos anteriores
-    limpiarResaltado();
-
-    for (VistaTablero.Movimiento movimiento : movimientos) {
-        int f = movimiento.getFila();
-        int c = movimiento.getColumna();
-        etiquetasTablero[f][c].setBorder(BorderFactory.createLineBorder(Color.RED));
-    }
-
-    // Resaltar la casilla seleccionada
-    etiquetasTablero[fila][columna].setBorder(BorderFactory.createLineBorder(Color.BLUE));
-}
-
-private void limpiarResaltado() {
-    for (int i = 0; i < etiquetasTablero.length; i++) {
-        for (int j = 0; j < etiquetasTablero[i].length; j++) {
-            etiquetasTablero[i][j].setBorder(BorderFactory.createLineBorder(Color.BLACK));
+        private PosiblesMovimientos calcularPosiblesMovimientosAlfil(int fila, int columna) {
+            throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
         }
-    }
-}
+
+        private PosiblesMovimientos calcularPosiblesMovimientosReina(int fila, int columna) {
+            throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        }
+
+        private PosiblesMovimientos calcularPosiblesMovimientosTorre(int fila, int columna) {
+            throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        }
+
+        private PosiblesMovimientos calcularPosiblesMovimientosCaballo(int fila, int columna) {
+            throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        }
+
+        private void resaltarPosiblesMovimientos(List<Movimiento> movimientos, int fila, int columna) {
+            throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        }
+
+        private PosiblesMovimientos calcularPosiblesMovimientosPeon(int fila, int columna) {
+            throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        }
+    });
         
         
     }//GEN-LAST:event_jComboBox1ActionPerformed
